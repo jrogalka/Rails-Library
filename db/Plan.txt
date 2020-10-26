@@ -1,0 +1,67 @@
+Dataset(s):
+  https://www.kaggle.com/jealousleopard/goodreadsbooks?select=books.csv Book data
+
+  Faker - Generate subjects for books
+
+
+
+Database:
+  Model: Book
+    - ID : primary_key
+    - Title : string
+    - AuthorID : int
+    - Rating : decimal
+    - Number of Pages : int
+    - created_at : timestamp
+    - updated_at : timestamp
+
+  Model: Subject
+    - ID : primary_key
+    - Name : string
+    - created_at : timestamp
+    - updated_at : timestamp
+
+  BookSubject:
+    - BookID : primary_key, foreign_key
+    - SubjectID : primary_key, foreign_key
+    - created_at : timestamp
+    - updated_at : timestamp
+
+    """JOIN TABLE"""
+
+  Author:
+    - ID : primary_key
+    - Name: string
+    - created_at : timestamp
+    - updated_at : timestamp
+
+Routes:
+  GET /books  =>  books#index (load and display all books)
+  GET /books/:id => books#show (load and display one book by id)
+
+  GET /authors  =>  authors#index (load and display all authors)
+  GET /authors/:id => authors#show (load and display one author by id)
+
+  GET /subjects  =>  categories#index (load and display all categories)
+  GET /subjects/:id => categories#show (load and display one category by id)
+
+Controllers:
+  - BooksController
+    * action: index
+    * action: show
+  - AuthorsController
+    * action: index
+    * action: show
+  - SubjectsController
+    * action: index
+    * action: show
+
+Views:
+  - view: index: /app/views/books/index.html.erb
+  - view: show: /app/views/books/show.html.erb
+
+  - view: index: /app/views/authors/index.html.erb
+  - view: show: /app/views/authors/show.html.erb
+
+  - view: index: /app/views/subjects/index.html.erb
+  - view: show: /app/views/subjects/show.html.erb
