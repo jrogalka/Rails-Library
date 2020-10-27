@@ -10,8 +10,7 @@ puts "Loading movies from #{filename}"
 csv_data = File.read(filename)
 books = CSV.parse(csv_data, headers: true, encoding: "utf-8", quote_char: "|")
 
-
-books[1..50].each do |b|
+books[1..300].each do |b|
   authors = b["authors"].split("/")
   author = Author.find_or_create_by(name: authors[0])
 

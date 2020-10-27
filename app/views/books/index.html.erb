@@ -1,9 +1,12 @@
-<h2>All Books</h2>
-
 <ul>
-  <% @books.each do |book| %>
-    <li>Title:<%= link_to book.title, book %></li>
-    <li>Rating: <%= book.rating %></li>
-    <br>
+  <div class="columns is-multiline">
+    <% @books.each do |book| %>
+      <div class="column is-full">
+        <li><%= link_to book.title, book %></li>
+        <p>Rating: <%= book.rating %> / 5</p>
+      </div>
     <% end %>
+  </div>
+  <%= paginate @books %>
 </ul>
+

@@ -4,12 +4,34 @@
     <title>Library</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- <%= stylesheet_link_tag "bulma.css" %> -->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   </head>
 
   <body>
-    <%= yield %>
+    <section class="hero is-primary has-bg-img">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          The Local Library
+        </h1>
+        <h2 class="subtitle">
+          A free collection of books
+        </h2>
+      </div>
+    </div>
+  </section>
+    <section class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>
