@@ -26,3 +26,4 @@ books[1..300].each do |b|
   end
 end
 puts "Created #{Author.count} Authors."
+puts "Created #{Book.count} Books"

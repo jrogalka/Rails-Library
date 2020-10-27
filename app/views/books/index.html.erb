@@ -1,3 +1,4 @@
+<% content_for(:html_title) { "All Books" } %>
 <h2 class="title is-2">All Books</h2>
 <div class="columns is-multiline">
   <ul>
@@ -10,6 +11,5 @@
         </li>
       <% end %>
   </ul>
-  <%= paginate @books %>
 </div>
-
+<%= paginate @books %>

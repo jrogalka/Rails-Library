@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-navbar-fixed-bottom">
   <head>
-    <title>Library</title>
+    <title><%= yield(:html_title) if content_for?(:html_title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta charset="utf-8">
@@ -27,6 +27,17 @@
         </div>
       </div>
     </section>
+
+    <nav class="navbar is-fixed-bottom is-primary" role="navigation" aria-label="main navigation">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <p class="navbar-item"><%= link_to 'Home', '/' %></p>
+          <p class="navbar-item"><%= link_to 'All Books', '/books' %></p>
+          <p class="navbar-item"><%= link_to 'All Authors', '/authors' %></p>
+        </div>
+      </div>
+    </nav>
+
     <section class="section">
       <div class="container">
         <%= yield %>
