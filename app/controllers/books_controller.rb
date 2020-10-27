@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @books = Book.includes(:author).order("rating DESC")
   end
 
-  def show; end
+  def show
+    @book = Book.find(params[:id])
+  end
 end
