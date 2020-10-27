@@ -20,7 +20,27 @@ books[1..300].each do |b|
       number_of_pages: b["num_pages"],
       rating:          b["average_rating"]
     )
-    puts "Invalid Book #{b['title']}" unless book&.valid?
+    unless book&.valid?
+      puts "Invalid Book #{b['title']}"
+      next
+    end
+
+    random_number = rand(1..3)
+    subjects = []
+    i = 0
+
+    while i < random_number
+      subjects[i] = Faker::Book.genre # Create a random amount of subject for each book.
+      i += 1
+    end
+
+    subjects.split(",") # If multiple subjects, seperate with ","
+
+    # Loop through and create subjects
+    subjects.each do |subject_name|
+      subject = Subject.find_or_create_by(name: subject_name)
+    end
+
   else
     puts "Invalid Author #{b['authors']} for book #{b['title']}"
   end
