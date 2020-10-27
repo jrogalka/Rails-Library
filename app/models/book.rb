@@ -1,5 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :author
+  has_many :book_subjects
+  has_many :subjects, through: :book_subjects
 
   validates :title, presence: true
   validates :title, uniqueness: true
