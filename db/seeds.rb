@@ -1,5 +1,7 @@
 require "csv"
 
+BookSubject.delete_all
+Subject.delete_all
 Book.delete_all
 Author.delete_all
 
@@ -47,4 +49,6 @@ books[1..300].each do |b|
   end
 end
 puts "Created #{Author.count} Authors."
-puts "Created #{Book.count} Books"
+puts "Created #{Book.count} Books."
+puts "Created #{Subject.count} Subjects."
+puts "Created #{BookSubject.count} BookSubjects."
