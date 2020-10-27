@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
-  def index
-    @books = Book.all
-  end
+  def index; end
 
   def about; end
 end

@@ -1,2 +1,13 @@
-<h1>Authors#index</h1>
-<p>Find me in app/views/authors/index.html.erb</p>
+<h2 class="title is-2">All Authors</h2>
+<div class="columns is-multiline">
+  <ul>
+      <% @authors.each do |author| %>
+        <li>
+          <div class="column is-full">
+            <%= link_to author.name, author %>
+          </div>
+        </li>
+      <% end %>
+  </ul>
+</div>
+<%= paginate @authors %>

@@ -1,4 +1,8 @@
+<h2 class="title is-2"><%= @book.title %></h2>
+
+
+
 <h3>Author: <%= link_to  @book.author.name, @book.author %></h3>
 <h3>Rating: <%= @book.rating %></h3>
 <h3>Number of pages: <%= @book.number_of_pages %></h3>
-<p><%= link_to 'Back', '/books' %></p>
+<p><%= link_to 'All Books', '/books' %></p>

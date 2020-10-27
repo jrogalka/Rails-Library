@@ -1,2 +1,14 @@
-<h1>Authors#show</h1>
-<p>Find me in app/views/authors/show.html.erb</p>
+<h2 class="title is-2"><%= @author.name %></h2>
+<h3 class="title is-4"><%= @author.name %> has written <%= @author.books.count %> books:</h3>
+<div class="columns is-multiline">
+  <ul>
+      <% @author.books.each do |book| %>
+        <li>
+          <div class="column is-full">
+            <%= link_to book.title, book %>
+            <p>Rating: <%= book.rating %> / 5</p>
+          </div>
+        </li>
+      <% end %>
+  </ul>
+</div>
