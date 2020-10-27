@@ -39,6 +39,7 @@ books[1..300].each do |b|
     # Loop through and create subjects
     subjects.each do |subject_name|
       subject = Subject.find_or_create_by(name: subject_name)
+      BookSubject.create(book: book, subject: subject)
     end
 
   else
